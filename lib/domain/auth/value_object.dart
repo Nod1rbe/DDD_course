@@ -3,8 +3,6 @@ import 'package:flutter_application_1/domain/core/failurs.dart';
 import 'package:flutter_application_1/domain/core/value_objects.dart';
 import 'package:flutter_application_1/domain/core/value_validators.dart';
 
-
-
 class EmailAddress extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
@@ -19,7 +17,6 @@ class EmailAddress extends ValueObject<String> {
   const EmailAddress._(this.value);
 }
 
-
 class Password extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
@@ -33,4 +30,3 @@ class Password extends ValueObject<String> {
 
   const Password._(this.value);
 }
-
