@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/sign_in/sign_in_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -6,18 +7,17 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: ThemeData.light().copyWith(
+        primaryColor: Colors.green[800],
+      
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8)
+          )
+        )
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text('Material AppBar'),),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+   debugShowCheckedModeBanner: false,
+      home: SignInPage(),
     );
   }
 }

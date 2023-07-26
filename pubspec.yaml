@@ -46,6 +46,9 @@ dependencies:
   injectable: ^2.1.2
   get_it: ^7.6.0
   firebase_core: ^1.19.0
+  flutter_test:
+    sdk: flutter
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   
