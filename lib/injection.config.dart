@@ -11,10 +11,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:firebase_auth/firebase_auth.dart' as _i3;
 import 'package:flutter_application_1/application/auth/sign_in_form/bloc/sign_in_form_bloc.dart'
-    as _i5;
-import 'package:flutter_application_1/domain/auth/i_auth_facade.dart' as _i6;
-import 'package:flutter_application_1/infrastructure/auth/firebase_auth_facade.dart'
     as _i7;
+import 'package:flutter_application_1/domain/auth/i_auth_facade.dart' as _i5;
+import 'package:flutter_application_1/infrastructure/auth/firebase_auth_facade.dart'
+    as _i6;
 import 'package:flutter_application_1/infrastructure/core/firebase_injectable_modul.dart'
     as _i8;
 import 'package:get_it/get_it.dart' as _i1;
@@ -37,13 +37,13 @@ extension GetItInjectableX on _i1.GetIt {
         () => fireBaseInjectableModule.firebaseAuth);
     gh.lazySingleton<_i4.GoogleSignIn>(
         () => fireBaseInjectableModule.googleSignIn);
-    gh.factory<_i5.SignInFormBloc>(() => _i5.SignInFormBloc(
-          gh<_i6.IAuthFacade>(),
-          gh<_i5.SignInFormState>(),
-        ));
-    gh.lazySingleton<_i7.FirebaseAuthFacade>(() => _i7.FirebaseAuthFacade(
+    gh.lazySingleton<_i5.IAuthFacade>(() => _i6.FirebaseAuthFacade(
           gh<_i3.FirebaseAuth>(),
           gh<_i4.GoogleSignIn>(),
+        ));
+    gh.factory<_i7.SignInFormBloc>(() => _i7.SignInFormBloc(
+          gh<_i5.IAuthFacade>(),
+          gh<_i7.SignInFormState>(),
         ));
     return this;
   }

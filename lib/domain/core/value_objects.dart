@@ -30,17 +30,17 @@ abstract class ValueObject<T> {
   String toString() => 'Value($value)';
 }
 
-class UniqueId extends ValueObject<String> {
-  late final Either<ValueFailure<String>, String> value;
+// class UniqueId extends ValueObject<String> {
+//   late final Either<ValueFailure<String>, String> value;
 
-  factory UniqueId(String input) {
-    return UniqueId._(
-      right(Uuid().v1())
-    );
-  }
+//   factory UniqueId(String input) {
+//     return UniqueId._(
+//       right(Uuid().v1())
+//     );
+//   }
 
-  factory UniqueId.fromUniqueString(String uniqId) {
-    assert(uniqId != null);
-    return UniqueId._(right(uniqId));
-  }
-}
+//   factory UniqueId.fromUniqueString(String uniqId) {
+//     assert(uniqId != null);
+//     return UniqueId._(right(uniqId));
+//   }
+// }

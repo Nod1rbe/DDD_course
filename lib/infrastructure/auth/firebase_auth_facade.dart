@@ -7,14 +7,13 @@ import 'package:flutter_application_1/domain/auth/value_object.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
-@lazySingleton
+@LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
   FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
 
- 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     EmailAddress? emailAddress,
@@ -81,13 +80,13 @@ class FirebaseAuthFacade implements IAuthFacade {
       return left(AuthFailure.serverError());
     }
   }
-  
+
   @override
   Future<Option<User>> getSignInUser() {
     // TODO: implement getSignInUser
     throw UnimplementedError();
   }
-  
+
   @override
   Future<void> signOut() {
     // TODO: implement signOut
